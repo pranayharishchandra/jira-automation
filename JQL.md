@@ -32,3 +32,7 @@ created >= "2024-01-01"  -- From specific date
 ```
 
 
+### 3. teams
+```SQL
+"Assigned Team" = "EU Central Data Support"
+```
