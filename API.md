@@ -1,6 +1,6 @@
 ## API
 ```[JQL] 
-[-status]
+1. status
     1. In Queue 
     2. Waiting for Support
 
@@ -9,8 +9,8 @@
 ```
 ```JQL [-created]
 ``` -->
+2. created
 ```[JQL] 
-[-created]
             created >= -15m   // Past 15 minutes
             created >= -30m   // Past 30 minutes
         
