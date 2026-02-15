@@ -6,7 +6,7 @@ const router = express.Router();
 
 async function getNewTickets(name) {
 
-    const teams = { ecdu: "EU Central Data Support" }
+    const teams = { ecds: "EU Central Data Support" }
     const teamName = teams[name];
 
 
@@ -21,15 +21,21 @@ async function getNewTickets(name) {
 `:
             `
   project = SD
+  AND status = "Waiting for Support"
   AND created >= "2026-02-13"
   ORDER BY created DESC
 `
 
+//     const jql =             `
+//   project = SD
+//   AND created >= "2026-02-13"
+//   ORDER BY created DESC
+// `
     const { data } = await jira.get("/rest/api/3/search/jql", {
         params: {
             jql,
             fields: "key,created",
-            maxResults: 50,
+            maxResults: 5,
         },
     });
 
@@ -46,7 +52,7 @@ router.get("/:teamName", async (req, res) => {
         const newlyAdded = [];
         for (const issueKey of newTickets) {
             newlyAdded.push(issueKey);
-            processTicket(issueKey); // ✅ Uncomment to enable
+            // processTicket(issueKey); // ✅ Uncomment to enable
         }
         res.json({
             message: "Ticket Check Complete",

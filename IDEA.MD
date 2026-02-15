@@ -9,3 +9,16 @@ const jql = `
   ORDER BY created DESC
 `;
 ```
+
+
+
+-----
+
+# Sending notification to teams
+🏗 If You Want It Even Better
+
+You can:
+Send Adaptive Cards (looks premium)
+Add AI summary before sending
+Filter by priority
+Send to different Teams channel based on project
