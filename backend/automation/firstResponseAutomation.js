@@ -10,27 +10,30 @@ async function getNewTickets(name) {
     const teamName = teams[name];
 
 
-    const jql =
-        (teamName) ?
-            `
-  project = SD
-  AND status = "Waiting for Support"
-  AND "Assigned Team" = "${teamName}"
-  AND created >= "2026-02-13"
-  ORDER BY created DESC
-`:
-            `
-  project = SD
-  AND status = "Waiting for Support"
-  AND created >= "2026-02-13"
-  ORDER BY created DESC
-`
-
-//     const jql =             `
+//     const jql =
+//         (teamName) ?
+//             `
 //   project = SD
+//   AND status = "Waiting for Support"
+//   AND "Assigned Team" = "${teamName}"
+//   AND created >= "2026-02-13"
+//   ORDER BY created DESC
+// `:
+//             `
+//   project = SD
+//   AND status = "Waiting for Support"
 //   AND created >= "2026-02-13"
 //   ORDER BY created DESC
 // `
+
+    const jql =             `
+project = SD
+
+  AND "Assigned Team" = "EU Central Data Support"
+  AND created >= -300m
+  ORDER BY created DESC
+`
+
     const { data } = await jira.get("/rest/api/3/search/jql", {
         params: {
             jql,

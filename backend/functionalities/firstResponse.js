@@ -51,7 +51,7 @@ async function assignIssue(issueKey) {
   await jira.put(`/rest/api/3/issue/${issueKey}`, {
     fields: {
       assignee: {
-        accountId: process.env.ASSIGNEE_ACCOUNT_ID,
+        accountId: process.env.ASSIGNEE_ACCOUNT_ID_GNANA,
       },
     },
   });
@@ -88,7 +88,6 @@ async function moveToInQueue(issueKey) {
 
 // 4️⃣ Main Processor
 async function processTicket(issueKey) {
-  return;
   try {
     await addPublicComment(
       issueKey,
@@ -111,7 +110,7 @@ Please feel free to share any additional context or attachments that might help 
 
 
 // Run manually
-// processTicket("SD-246952");
+
 export { processTicket };
 
 
