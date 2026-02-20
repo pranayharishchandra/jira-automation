@@ -4,7 +4,7 @@ import { handleTickets } from "../automation/firstResponseAutomation.js";
 export function startTicketCron() {
   // Every 15 minutes
   cron.schedule("*/15 * * * *", async () => {
-    console.log("⏰ Cron started: processing tickets");
+    console.log("⏰ Cron started: processing tickets" + new Date().toLocaleString());
 
     try {
       await handleTickets("ecds", { mutate: true });

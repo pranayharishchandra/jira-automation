@@ -3,9 +3,7 @@ import jira from "../config/jiraClient.js";
 // 📝 1. Add Public Comment
 async function addPublicComment(issueKey) {
   const message = `Thank you for raising the ticket. We have reviewed the initial details and will begin the assessment shortly.
-
 We will keep you updated on the progress and reach out if any further information is required.
-
 Please feel free to share any additional context or attachments that might help with the resolution.`;
 
   await jira.post(`/rest/api/3/issue/${issueKey}/comment`, {
