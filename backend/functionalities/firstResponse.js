@@ -65,6 +65,8 @@ async function moveToInQueue(issueKey) {
   console.log(`🔄 Moved to In Queue → ${issueKey}`);
 }
 
+
+
 // 🚀 4. Main Processor
 async function processTicket(issueKey) {
   console.log(`🚀 Processing ${issueKey}`);

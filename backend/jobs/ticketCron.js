@@ -2,8 +2,8 @@ import cron from "node-cron";
 import { handleTickets } from "../automation/firstResponseAutomation.js";
 
 export function startTicketCron() {
-  // Every 15 minutes
-  cron.schedule("*/15 * * * *", async () => {
+  // Every 10 minutes
+  cron.schedule("*/10 * * * *", async () => {
     console.log("⏰ Cron started: processing tickets" + new Date().toLocaleString());
 
     try {
